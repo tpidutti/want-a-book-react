@@ -11,14 +11,14 @@ const Detail = props => {
 
   useEffect(() => {
     API.getBook(props.match.params.id)
-      .then(res => dispatch({ type: SET_CURRENT_BOOK, post: res.data }))
+      .then(res => dispatch({ type: SET_CURRENT_BOOK, book: res.data }))
       .catch(err => console.log(err));
   }, []);
 
   const addSaved = () => {
     dispatch({
       type: ADD_SAVED,
-      post: state.currentBook
+      book: state.currentBook
     });
   };
 

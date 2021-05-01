@@ -34,10 +34,10 @@ function CreateBookForm() {
       <div className="jumbotron">
         <img
           className="img-fluid img-thumbnail"
-          src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          src="./image/readingBook.jpeg"
         />
       </div>
-      <h1>Book</h1>
+      <h1>Books</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
@@ -45,22 +45,7 @@ function CreateBookForm() {
           required
           ref={titleRef}
           id="title"
-          placeholder="Title"
-        />
-        <label htmlFor="body">Body:</label>
-        <textarea
-          className="form-control mb-5"
-          required
-          ref={bodyRef}
-          id="body"
-          placeholder="Body"
-        />
-        <label htmlFor="description">Description:</label>
-        <input
-          className="form-control mb-5"
-          ref={authorRef}
-          id="description"
-          placeholder="Description"
+          placeholder="Search by Title"
         />
         <button
           className="btn btn-success mt-3 mb-5"

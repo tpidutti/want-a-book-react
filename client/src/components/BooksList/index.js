@@ -20,31 +20,31 @@ function BooksList() {
       .catch(err => console.log(err));
   };
 
-  const getBook = () => {
+  const getBooks = () => {
     dispatch({ type: LOADING });
-    API.getBook()
+    API.getBooks()
       .then(results => {
         dispatch({
           type: UPDATE_BOOKS,
-          posts: results.data
+          books: results.data
         });
       })
       .catch(err => console.log(err));
   };
 
   useEffect(() => {
-    getBook();
+    getBooks();
   }, []);
 
   return (
     <div>
-      <h1>All Books</h1>
+      <h1>My Books</h1>
       <h3 className="mb-5 mt-5">Click on the book to view</h3>
       {state.books.length ? (
         <List>
           {state.books.map(book => (
             <ListItem key={book._id}>
-              <Link to={"/posts/" + book._id}>
+              <Link to={"/books/" + book._id}>
                 <strong>
                   {book.title} by {book.author}
                 </strong>
